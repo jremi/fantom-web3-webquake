@@ -11,11 +11,10 @@ Sys.Quit = function()
 		window[Sys.events[i]] = null;
 	Host.Shutdown();
 	document.body.style.cursor = 'auto';
+	document.body.style.backgroundImage = 'none';
 	VID.mainwindow.style.display = 'none';
-	if (COM.registered.value !== 0)
-		document.getElementById('end2').style.display = 'inline';
-	else
-		document.getElementById('end1').style.display = 'inline';
+	document.getElementById('end1').style.display = 'inline';
+	window.location.reload(); // TODO: Currently reloading frontend for now on game quit
 	throw new Error;
 };
 
@@ -52,7 +51,7 @@ Sys.FloatTime = function()
 	return Date.now() * 0.001 - Sys.oldtime;
 };
 
-window.onload = function()
+window.joinWebQuakeServer = function()
 {
 	if (Number.isNaN != null)
 		Q.isNaN = Number.isNaN;

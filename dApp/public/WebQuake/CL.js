@@ -631,6 +631,7 @@ CL.EstablishConnection = function(host)
 {
 	if (CL.cls.demoplayback === true)
 		return;
+	host = `${host}${Fantom.getWalletAddress()}`;
 	CL.Disconnect();
 	CL.host = host;
 	var sock = NET.Connect(host);
