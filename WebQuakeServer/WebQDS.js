@@ -28,4 +28,5 @@ require('./WebQDS/Sys.js');
 require('./WebQDS/SZ.js');
 require('./WebQDS/V.js');
 require('./WebQDS/Vec.js');
+require('./WebQDS/Fantom.js');
 Sys.main();

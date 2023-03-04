@@ -53,11 +53,11 @@ Host.InitLocal = function()
 	Host.rcon_password = Cvar.RegisterVariable('rcon_password', '');
 	Host.ticrate = Cvar.RegisterVariable('sys_ticrate', '0.05');
 	Host.serverprofile = Cvar.RegisterVariable('serverprofile', '0');
-	Host.fraglimit = Cvar.RegisterVariable('fraglimit', '0', false, true);
-	Host.timelimit = Cvar.RegisterVariable('timelimit', '0', false, true);
+	Host.fraglimit = Cvar.RegisterVariable('fraglimit', '5', false, true); // Set game frag limit (e.g: 5 frags)
+	Host.timelimit = Cvar.RegisterVariable('timelimit', '0', false, true); // Set game time limit (e.g: 0 minutes)
 	Host.teamplay = Cvar.RegisterVariable('teamplay', '0', false, true);
-	Host.samelevel = Cvar.RegisterVariable('samelevel', '0');
-	Host.noexit = Cvar.RegisterVariable('noexit', '0', false, true);
+	Host.samelevel = Cvar.RegisterVariable('samelevel', '2');
+	Host.noexit = Cvar.RegisterVariable('noexit', '1', false, true);
 	Host.skill = Cvar.RegisterVariable('skill', '1');
 	Host.developer = Cvar.RegisterVariable('developer', '0');
 	Host.deathmatch = Cvar.RegisterVariable('deathmatch', '0');
@@ -466,6 +466,9 @@ Host.Name_f = function()
 		newName = Cmd.args.substring(0, 15);
 
 	var name = SV.GetClientName(Host.client);
+
+	newName = `${newName} ${Fantom.FormatFantomAddress(Host.client)}`;
+	
 	SV.SetClientName(Host.client, newName);
 	var msg = SV.server.reliable_datagram;
 	MSG.WriteByte(msg, Protocol.svc.updatename);
@@ -902,7 +905,7 @@ Host.Give_f = function()
 Host.Startdemos_f = function()
 {
 	if (SV.server.active !== true)
-		Cmd.text += 'map start\n';
+		Cmd.text += `map e1m7\n`; //e1m7
 };
 
 Host.InitCommands = function()

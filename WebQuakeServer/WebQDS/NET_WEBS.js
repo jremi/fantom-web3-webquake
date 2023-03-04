@@ -189,6 +189,7 @@ WEBS.HTTPOnRequest = function(request, response)
 		}
 		response.statusCode = 200;
 		response.setHeader('Content-Type', 'text/html; charset=UTF-8');
+		response.setHeader('Access-Control-Allow-Origin', '*')
 		if (head === true)
 		{
 			response.end();
@@ -260,16 +261,22 @@ WEBS.HTTPOnRequest = function(request, response)
 		}
 		response.statusCode = 200;
 		response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+		response.setHeader('Access-Control-Allow-Origin', '*')
 		if (head === true)
 			response.end();
 		else
 		{
 			response.end(JSON.stringify({
-				hostName: NET.hostname.string,
+				game: "WebQuake",
 				levelName: PR.GetString(PR.globals_int[PR.globalvars.mapname]),
+				hostName: NET.hostname.string,
 				currentPlayers: NET.activeconnections,
+				minPlayers: Fantom.gameSettings.minPlayers,
 				maxPlayers: SV.svs.maxclients,
-				protocolVersion: 2
+				fragsToWinJackpot: Host.fraglimit.value,
+				ftmBetAmount: Fantom.gameSettings.requiredBetAmountFtm,
+				ftmCurrentJackpot: Fantom.gameSettings.requiredBetAmountFtm * Fantom.gameSettings.players.length,
+				ftmMaxJackpot: Fantom.gameSettings.maxPlayers * Fantom.gameSettings.requiredBetAmountFtm
 			}));
 		}
 		return;
@@ -287,6 +294,7 @@ WEBS.HTTPOnRequest = function(request, response)
 		{
 			response.statusCode = 200;
 			response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+			response.setHeader('Access-Control-Allow-Origin', '*')
 			response.write('[');
 			text = [];
 			for (i = 0; i < SV.svs.maxclients; ++i)
@@ -299,7 +307,10 @@ WEBS.HTTPOnRequest = function(request, response)
 					colors: client.colors,
 					frags: (client.edict.v_float[PR.entvars.frags]) >> 0,
 					connectTime: Sys.FloatTime() - client.netconnection.connecttime,
-					address: client.netconnection.address
+					address: client.netconnection.address,
+					fantomAddress: client.fantomAddress,
+					fantomNetwork: client.fantomNetwork,
+					fantomBetPaid: !!Fantom.gameSettings.players.find(player => player.toLowerCase() === client.fantomAddress.toLowerCase())
 				});
 			}
 			response.write(text.join(','));
@@ -324,6 +335,7 @@ WEBS.HTTPOnRequest = function(request, response)
 		}
 		response.statusCode = 200;
 		response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+		response.setHeader('Access-Control-Allow-Origin', '*')
 		if (head === true)
 		{
 			response.end();
@@ -355,6 +367,7 @@ WEBS.HTTPOnRequest = function(request, response)
 						continue;
 					response.statusCode = 200;
 					response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+					response.setHeader('Access-Control-Allow-Origin', '*')
 					if (head === true)
 						response.end();
 					else
@@ -368,6 +381,7 @@ WEBS.HTTPOnRequest = function(request, response)
 		}
 		response.statusCode = 200;
 		response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+		response.setHeader('Access-Control-Allow-Origin', '*')
 		if (head === true)
 		{
 			response.end();
@@ -472,5 +486,5 @@ WEBS.ServerOnRequest = function(request)
 		NET.Close(s);
 		break;
 	}
-	WEBS.acceptsockets.push(request.accept('quake', request.origin));
+	Fantom.AuthIncomingPlayerSocket(request);
 };

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "web3": "^1.8.2",
+    "websocket": "^1.0.34"
+  }
+}

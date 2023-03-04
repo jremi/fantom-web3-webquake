@@ -181,6 +181,8 @@ SV.ConnectClient = function(clientnum)
 	var i, spawn_parms;
 	Con.DPrint('Client ' + client.netconnection.address + ' connected\n');
 	client.active = true;
+	client.fantomAddress = client.netconnection.driverdata.fantomAddress;
+	client.fantomNetwork = client.netconnection.driverdata.fantomNetwork;
 	client.dropasap = false;
 	client.last_message = 0.0;
 	client.cmd = {forwardmove: 0.0, sidemove: 0.0, upmove: 0.0};
@@ -200,6 +202,7 @@ SV.ConnectClient = function(clientnum)
 	for (i = 0; i <= 15; ++i)
 		client.spawn_parms[i] = PR.globals_float[PR.globalvars.parms + i];
 	SV.SendServerinfo(client);
+	// Fantom.VerifyGameStart();
 };
 
 SV.fatpvs = [];

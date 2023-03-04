@@ -41,6 +41,7 @@ Sys.main = function()
 	process.stdin.resume();
 	process.stdin.on('data', Sys.StdinOnData);
 	process.nextTick(Host.Frame);
+	Fantom.InitSmartContract();
 };
 
 Sys.StdinOnData = function(data)
