@@ -1,0 +1,65 @@
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+                
+:root {
+  --color-fantom-white: #fff;
+  --color-fantom-blue: #1969ff;
+  --color-fantom-blue2: #001f68;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Proxima Nova', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  position: fixed;
+  top: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: var(--color-fantom-white);
+  text-decoration: none;
+}
+
+.fantom-btn {
+  background-color: var(--color-fantom-blue);
+  color: var(--color-fantom-white);
+  border-radius: 24px;
+  border: none;
+  font-weight: 600;
+  text-align: center;
+  width: 170px;
+  height: 42px;
+  letter-spacing: normal;
+  font-stretch: normal;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 0;
+  margin: 0;
+  transform: none;
+  cursor: pointer;
+}
+
+.fantom-btn:hover {
+  background-color: #32325d
+}
