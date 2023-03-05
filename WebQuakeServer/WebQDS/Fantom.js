@@ -138,18 +138,24 @@ Fantom.InstallContractEventListeners = function () {
 
 Fantom.AuthIncomingPlayerSocket = function (request) {
   try {
-		const fantomData = JSON.parse(request.resourceURL.query.fantom);
-		const isPlayerAddressValid = Fantom.VerifyAddressSignature(fantomData);
-		console.log('Fantom account player tamper check passed:', isPlayerAddressValid);
-		if (isPlayerAddressValid) {
-			WEBS.acceptsockets.push(Fantom.AttachAccountInfo(request, fantomData));
-		} else {
-			request.reject();
-		}
-	} catch (err) {
-		console.error("Failed to obtain fantomAddress/fantomNetwork from incoming client socket request!", err)
-	}
-}
+    const fantomData = JSON.parse(request.resourceURL.query.fantom);
+    const isPlayerAddressValid = Fantom.VerifyAddressSignature(fantomData);
+    console.log(
+      "Fantom account player tamper check passed:",
+      isPlayerAddressValid
+    );
+    if (isPlayerAddressValid) {
+      WEBS.acceptsockets.push(Fantom.AttachAccountInfo(request, fantomData));
+    } else {
+      request.reject();
+    }
+  } catch (err) {
+    console.error(
+      "Failed to obtain fantomAddress/fantomNetwork from incoming client socket request!",
+      err
+    );
+  }
+};
 
 Fantom.VerifyAddressSignature = function (fantomData) {
   const { fantomAddress, fantomAddressMessage, fantomAddressSignature } = fantomData;

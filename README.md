@@ -1,7 +1,6 @@
 # **Fantom Web3 WebQuake**
 
-<img src="https://i.imgur.com/aSaV7Ps.png#gh-light-mode-only" width="100" style="filter:invert(1)" />
-<img src="https://i.imgur.com/aSaV7Ps.png" width="100" />
+<img src="https://i.imgur.com/RyLO605.png" width="100" />
 <img src="https://i.imgur.com/OePHVR5.png" width="100" />
 
 <br>
