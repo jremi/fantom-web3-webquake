@@ -1,11 +1,18 @@
 # **Fantom Web3 WebQuake**
 
-<img src="https://i.imgur.com/RyLO605.png" width="100" />
-<img src="https://i.imgur.com/OePHVR5.png" width="100" />
+<p style="float: left">
+  <img src="https://user-images.githubusercontent.com/5322988/222937872-41a2ad3a-14b0-4a02-829a-de4e7ee6f3fa.png" width="100" />
+  <img src="https://user-images.githubusercontent.com/5322988/222937873-e73912ce-5a25-46f2-854f-7b64d5f70ed9.png" width="100" />
+</p>
 
 <br>
 
 **⚠️ WARNING**: THE AUTHOR OF THIS PROJECT WILL NOT BE HELD RESPONSIBLE FOR ANYTHING YOU DECIDE TO DO WITH THIS CODE. THIS CODE HAS ONLY BEEN TESTED ON THE [FANTOM](https://fantom.foundation) BLOCKCHAIN [TESTNET](https://testnet.ftmscan.com) & NEVER WITHIN A PRODUCTION ENVIRONMENT FOR REAL-WORLD USAGE USING ACTUAL [FTM](https://coinmarketcap.com/currencies/fantom) CRYPTOCURRENCY ON THE LIVE MAINNET. THIS PROJECT IS A FUNCTIONAL PROOF OF CONCEPT (POC) DEVELOPED AS A FUN & CREATIVE EXPLORATION. USE AT YOUR OWN RISK!
+
+<p align="center" style="float: left">
+  <img src="https://user-images.githubusercontent.com/5322988/222937410-ac97db42-ebe4-4454-9dcb-97a7569fd767.gif" width="450" />
+  <img src="https://user-images.githubusercontent.com/5322988/222937411-aafc037a-630b-428a-9996-ac4a828108cc.gif" width="450" />
+</p>
 
 ## **Why should I care?**
 
@@ -76,6 +83,40 @@ This is currently done to wipe all server-side state after the game is completed
 1. Setup instructions for smart contract [(/HardHat/README.md)](/HardHat/README.md)
 2. Setup instructions for server [(/WebQuakeServer/README.md)](/WebQuakeServer/README.md)
 3. Setup instructions for client [(/dApp/README.md)](/dApp/README.md)
+
+## Screenshots
+
+<p align="center">
+  <p align="center">
+    <img width="700" alt="InGame - Place Bet Prompt MetaMask" src="https://user-images.githubusercontent.com/5322988/222937612-f68379e2-5cdd-4ceb-8262-c40f41360a8b.png">
+    <p align="center"><em>Player placing FTM bet using MetaMask</em></p>
+  </p>
+  
+  <p align="center">
+    <img width="800" alt="InGame - Waiting for all players" src="https://user-images.githubusercontent.com/5322988/222937617-58a9a885-4b77-4529-9aec-a0405843a7fb.png">
+    <p align="center"><em>Player waiting for all players to place bets</em></p>
+  </p>
+  
+  <p align="center">
+    <img width="800" alt="InGame - With Player" src="https://user-images.githubusercontent.com/5322988/222937618-416f2c5f-c006-4880-89b6-79ce7bdca494.png">
+    <p align="center"><em>Player in deathmatch</em></p>
+  </p>
+  
+  <p align="center">
+    <img width="800" alt="InGame - With Player 2" src="https://user-images.githubusercontent.com/5322988/222937622-124d2bab-5ecd-4b63-b163-05fb0c36214c.png">
+    <p align="center"><em>Player in deathmatch</em></p>
+  </p>
+  
+  <p align="center">
+    <img width="800" alt="Game Over Winner Prompt" src="https://user-images.githubusercontent.com/5322988/222937625-56549ae0-b051-4a06-a2a0-ccbf8043870d.png">
+    <p align="center"><em>Player won. Most kills "frags'. Instant FTM payout</em></p>
+  </p>
+  
+  <p align="center">
+    <img width="800" alt="Contract Transactions" src="https://user-images.githubusercontent.com/5322988/222937626-e0e99c1b-8604-428d-b848-887af5e1e3b5.png">
+    <p align="center"><em>Server smart contract showing recent FTM transactions</em></p>
+  </p>
+</p>
 
 ## **Why did you make this?**
 
