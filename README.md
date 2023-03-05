@@ -84,7 +84,7 @@ This is currently done to wipe all server-side state after the game is completed
 2. Setup instructions for server [(/WebQuakeServer/README.md)](/WebQuakeServer/README.md)
 3. Setup instructions for client [(/dApp/README.md)](/dApp/README.md)
 
-## Screenshots
+## **Screenshots**
 
 <p align="center">
   <p align="center">
@@ -118,6 +118,16 @@ This is currently done to wipe all server-side state after the game is completed
   </p>
 </p>
 
+## **YouTube Demo**
+<div align="center">
+  <p align="center">
+    <a href="https://www.youtube.com/embed/9OTcmqtB2Q4">
+        <img src="https://img.youtube.com/vi/9OTcmqtB2Q4/0.jpg" style="width:800px;">
+    </a>
+  </p>
+</div>
+<br>
+
 ## **Why did you make this?**
 
-I love playing around with different technologies and building. This project was hacked together for the [Fantom Hackathon Q1 2023](https://fantomq12023.devpost.com/).
+I love playing around with different technologies and building. This project was hacked together for the [Fantom Hackathon Q1 2023](https://devpost.com/software/fantom-game-lobby-for-webquake).
