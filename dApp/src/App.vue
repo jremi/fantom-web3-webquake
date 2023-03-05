@@ -49,7 +49,10 @@
             </thead>
             <tbody>
               <tr v-for="(player, index) in webquake.player_info" :key="index">
-                <td>{{ player.name }}</td>
+                <td class="player-name-cell">
+                  <img :src="`https://api.dicebear.com/5.x/pixel-art-neutral/svg?seed=${player.fantomAddress}`" width="36" />
+                  <span>{{ player.name }}</span>
+                </td>
                 <td>{{ player.frags }}</td>
                 <td>
                   <a
@@ -445,6 +448,13 @@ main {
 .player-info table {
   border-collapse: collapse;
   width: 100%;
+  .player-name-cell {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 0.5rem;
+    }
+  }
 }
 
 .player-info table th,
