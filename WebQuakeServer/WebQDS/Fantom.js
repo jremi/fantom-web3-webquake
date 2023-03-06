@@ -205,7 +205,6 @@ Fantom.GameEndPoller = function () {
       client = SV.svs.clients[i];
       if (client.active !== true) continue;
       const frags = client.edict.v_float[PR.entvars.frags] >> 0;
-      // TODO: check this condition on subsequent map respawns / initial winner.
       if (frags === fragsToWinJackpot) {
         Fantom.releaseFunds(client.fantomAddress)
           .then((r) => {
