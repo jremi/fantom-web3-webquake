@@ -121,8 +121,8 @@ This is currently done to wipe all server-side state after the game is completed
 ## **YouTube Demo**
 <div align="center">
   <p align="center">
-    <a href="https://www.youtube.com/embed/9OTcmqtB2Q4">
-        <img src="https://img.youtube.com/vi/9OTcmqtB2Q4/0.jpg" style="width:800px;">
+    <a href="https://www.youtube.com/embed/BzZNiQg0yow">
+        <img src="https://img.youtube.com/vi/BzZNiQg0yow/0.jpg" style="width:800px;">
     </a>
   </p>
 </div>
